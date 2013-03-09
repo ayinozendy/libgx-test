@@ -4,7 +4,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 public class DesktopTest {
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         LwjglApplicationConfiguration cf = new LwjglApplicationConfiguration();
         cf.title = "Libgdx Test - Desktop";
         cf.useGL20 = true;
@@ -12,6 +12,6 @@ public class DesktopTest {
         cf.height = 480;
         cf.resizable = false;
 
-        new LwjglApplication( new MainApp(), cf );
+        new LwjglApplication(new MainApp(), cf);
     }
 }
