@@ -15,8 +15,12 @@ public class ShowImageScreen implements Screen {
 
     @Override
     public void render(float v) {
+        clearScreen();
         camera.update();
         renderSpriteBatch();
+    }
+
+    private void clearScreen() {
         Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
     }
