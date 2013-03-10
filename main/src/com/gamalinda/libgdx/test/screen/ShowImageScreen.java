@@ -15,9 +15,13 @@ public class ShowImageScreen implements Screen {
 
     @Override
     public void render(float v) {
+        camera.update();
+        renderSpriteBatch();
         Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-        camera.update();
+    }
+
+    private void renderSpriteBatch() {
         spriteBatch.setProjectionMatrix(camera.combined);
         spriteBatch.begin();
         spriteBatch.draw(openSourceLogo, 0, 0);
