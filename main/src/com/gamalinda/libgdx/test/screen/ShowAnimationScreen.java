@@ -30,7 +30,7 @@ public class ShowAnimationScreen implements Screen {
     }
 
     private void clearScreen() {
-        Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
+        Gdx.gl.glClearColor(0, 0, 1f, 1f);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
     }
 
