@@ -6,6 +6,9 @@ import com.gamalinda.libgdx.test.screen.ShowAnimationScreen;
 import com.gamalinda.libgdx.test.screen.ShowImageScreen;
 
 public class MainApp extends Game {
+    private final static int IMAGE_SCREEN = 0;
+    private final static int ANIMATION_SCREEN = IMAGE_SCREEN + 1;
+    private static int CURRENT_SCREEN = IMAGE_SCREEN;
 
     ShowImageScreen imageScreen = new ShowImageScreen();
     ShowAnimationScreen animationScreen = new ShowAnimationScreen();
@@ -23,8 +26,23 @@ public class MainApp extends Game {
     @Override
     public void render() {
         super.render();
-        if (Gdx.input.isTouched()) {
-            this.setScreen(animationScreen);
+        if (Gdx.input.justTouched()) {
+            nextScreen();
+        }
+    }
+
+    private void nextScreen() {
+        CURRENT_SCREEN++;
+        switch (CURRENT_SCREEN) {
+            case IMAGE_SCREEN:
+                this.setScreen(imageScreen);
+                break;
+            case ANIMATION_SCREEN:
+                this.setScreen(animationScreen);
+                break;
+            default:
+                this.setScreen(imageScreen);
+                CURRENT_SCREEN = IMAGE_SCREEN;
         }
     }
 
